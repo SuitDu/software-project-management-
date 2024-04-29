@@ -1,0 +1,80 @@
+<!--
+  手绘页面主要使用HTML 5的Canvas元素实现画图。提供了画笔粗细、画笔和画板的颜色调整，撤退、前进，删除等功能，并支持图片下载。
+ -->
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>手绘画板</title>
+  <link rel="stylesheet" href="css/handDrawstyle.css" />
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <!-- 创建网页的功能按钮 -->
+  <div id="toggle">
+    <svg class="icon close" aria-hidden="true" id="toggleClose">
+      <use xlink:href="#icon-close" class="close"></use>
+    </svg>
+    <svg class="icon open show" aria-hidden="true" id="toggleOpen">
+      <use xlink:href="#icon-open" class="open"></use>
+    </svg>
+  </div>
+  <div id="tools">
+    <div class="button">
+      <button id="clear">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-clear"></use>
+        </svg>
+      </button>
+      <button id="download">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-save"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="svg1">
+      <svg id="back" class="icon" aria-hidden="true">
+        <use xlink:href="#icon-back"></use>
+      </svg>
+      <svg id="go" class="icon" aria-hidden="true">
+        <use xlink:href="#icon-go"></use>
+      </svg>
+    </div>
+    <div class="svg2">
+      <svg id="pen" class="active icon" aria-hidden="true">
+        <use xlink:href="#icon-pen"></use>
+      </svg>
+      <svg id="eraser" class="icon" aria-hidden="true">
+        <use xlink:href="#icon-eraser"></use>
+      </svg>
+    </div>
+    <ol class="colors">
+      <input type="color" name="" id="currentColor" autocompleteHTML5 title="画笔颜色" />
+      <input type="color" name="" id="bgColor" autocompleteHTML5 value="#e6e6e6" title="画布颜色" />
+      <!-- <input type="checkbox" name="" id="dashline"  title="虚线" style="width:40px;height:40px;"  value="true"
+            onclick="setdashline();"/> -->
+    </ol>
+    <div id="range-wrap"><input type="range" id="range" min="1" max="30" value="5" title="调整笔刷或橡皮擦粗细"></div>
+    <!-- <div class="sizes">
+        <input
+          type="range"
+          id="range"
+          name="range"
+          min="1"
+          max="20"
+          value="5"
+        />
+      </div> -->
+  </div>
+  <!-- JS文件 -->
+  <script src="js/handDrawmain1.js"></script>
+  <script src="js/handDrawmain2.js"></script>
+
+</body>
+
+</html>
